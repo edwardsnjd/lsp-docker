@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# A shim to make starting the pylsp container easier
+
+exec docker compose run --rm pylsp "$@"
