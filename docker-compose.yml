@@ -1,6 +1,0 @@
-services:
-  pylsp:
-    build: .
-    volumes:
-      - /Users/nick/Dropbox/code:/Users/nick/Dropbox/code
-      - /Users/nick/Dropbox/Work/Chironix/code/neopixel_control:/Users/nick/Dropbox/Work/Chironix/code/neopixel_control

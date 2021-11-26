@@ -2,4 +2,9 @@
 
 # A shim to make starting the pylsp container easier
 
-exec docker compose run --rm pylsp "$@"
+exec docker run \
+  --interactive \
+  --rm \
+  --volume "$(pwd)":"$(pwd)" \
+  python-lsp-server-docker \
+  "$@"
