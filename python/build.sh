@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-docker build -t python-lsp-server-docker .
+docker build -t lsp-python .

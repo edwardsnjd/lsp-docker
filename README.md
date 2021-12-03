@@ -16,6 +16,13 @@ When the container is started, the `run.sh` scripts will bind mount your current
 
 If that's not possible, then you will need to tweak your `run.sh` scripts to mount your source code directories correctly.
 
+**NOTE: LSP client process ID**
+
+Many LSP server implementations monitor the `processId` supplied as part of the initialisation parameters and automatically shut down if that process is not running.  There are two ways to work around that:
+
+1. Tweak your `run.sh` scripts to run the docker container in the same process namespace as the host: `--pid=host`
+2. Tweak your LSP client to supply `null` as the `processId`
+
 ## Usage
 
 To use a specific LSP server:
@@ -32,8 +39,8 @@ $ cd python
 $ # Build the image
 $ ./build.sh
 $ # Symbolic link to run script on your PATH
-$ ln -s $(pwd)/run.sh ~/.local/bin/pylsp-docker
+$ ln -s $(pwd)/run.sh ~/.local/bin/lsp-python
 $ # Sanity check
-$ pylsp-docker --help
-$ # Configure your LSP client to run `pylsp-docker`
+$ lsp-python --help
+$ # Configure your LSP client to run `lsp-python`
 ```
