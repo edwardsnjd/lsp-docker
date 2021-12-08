@@ -7,5 +7,6 @@ exec docker run \
   --rm \
   --volume "$(pwd)":"$(pwd)" \
   --workdir "$(pwd)" \
+  --user $(id -u):$(id -g) \
   lsp-rust \
   "$@"
