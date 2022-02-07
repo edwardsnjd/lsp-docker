@@ -7,5 +7,6 @@ exec docker run \
   --rm \
   --volume "$(pwd)":"$(pwd)" \
   --workdir "$(pwd)" \
+  --init \
   lsp-python \
   "$@"
