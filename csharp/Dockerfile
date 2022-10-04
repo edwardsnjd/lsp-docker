@@ -10,4 +10,6 @@ RUN curl -L -O "https://github.com/OmniSharp/omnisharp-roslyn/releases/download/
   && tar -xf omnisharp-linux-x64.tar.gz -C /usr \
   && rm omnisharp-linux-x64.tar.gz
 
-ENTRYPOINT [ "/usr/run", "--languageserver" ]
+ENTRYPOINT [ "/usr/run" ]
+
+CMD [ "--languageserver" ]
